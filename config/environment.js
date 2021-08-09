@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'exam-online-admin',
+    podModulePrefix: 'exam-online-admin/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
