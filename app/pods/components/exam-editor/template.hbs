@@ -1,0 +1,117 @@
+<form class='card card-body'>
+  <div class='row mb-3'>
+    <label for='examination-title' class='col-sm-2 col-form-label'>Title</label>
+    <div class='col-sm-10'>
+      <Input
+        type='text'
+        class='form-control'
+        id='examination-title'
+        @value={{@exam.title}}
+      />
+    </div>
+  </div>
+  <div class='row mb-3'>
+    <label for='examination-code' class='col-sm-2 col-form-label'>Exam Code</label>
+    <div class='col-sm-10'>
+      <Input
+        type='text'
+        class='form-control'
+        id='examination-code'
+        @value={{@exam.code}}
+      />
+    </div>
+  </div>
+  <div class='row mb-3'>
+    <label
+      for='examination-description'
+      class='col-sm-2 col-form-label'
+    >Description</label>
+    <div class='col-sm-10'>
+      <Textarea
+        type='text'
+        class='form-control'
+        id='examination-description'
+        @value={{@exam.description}}
+      />
+    </div>
+  </div>
+  <div class='row mb-3'>
+    <label for='examination-type' class='col-sm-2 col-form-label'>Type</label>
+    <div class='col-sm-10 mt-2'>
+      <PowerSelect
+        @options={{this.examTypes}}
+        @onChange={{action (mut @exam.type)}}
+        @selected={{@exam.type}}
+        as |name|
+      >
+        {{name}}
+      </PowerSelect>
+      {{! <select class='container' id='examination-type' name='exam-type'>
+        <option value='vedic-maths'>Vedic Maths</option>
+        <option value='english'>English</option>
+        <option value='abacus' selected>Abacus</option>
+      </select> }}
+    </div>
+  </div>
+
+  <div class='row mb-3'>
+    <label
+      for='examination-primary-price'
+      class='col-sm-2 col-form-label'
+    >Primary Price</label>
+    <div class='col-sm-10'>
+      <Input
+        type='number'
+        class='form-control'
+        id='examination-primary-price'
+        @value={{@exam.primaryPrice}}
+      />
+
+    </div>
+  </div>
+
+  <div class='row mb-3'>
+    <label
+      for='examination-secondary-price'
+      class='col-sm-2 col-form-label'
+    >Secondary Price</label>
+    <div class='col-sm-10'>
+      <Input
+        type='number'
+        class='form-control'
+        id='examination-secondary-price'
+        @value={{@exam.secondaryPrice}}
+      />
+    </div>
+  </div>
+
+  <div class='row mb-3'>
+    <label for='examination-start-date' class='col-sm-2 col-form-label'>Start
+      Date
+    </label>
+    <div class='col-sm-10'>
+      <DateTimePicker
+        @datetime={{@exam.start}}
+        @action={{action (mut @exam.start)}}
+      />
+    </div>
+  </div>
+
+  <div class='row mb-3'>
+    <label
+      for='examination-registration-end'
+      class='col-sm-2 col-form-label'
+    >Registration End</label>
+    <div class='col-sm-10'>
+      <DateTimePicker
+        @datetime={{@exam.registrationEnd}}
+        @action={{action (mut @exam.registrationEnd)}}
+      />
+    </div>
+  </div>
+  <button
+    class='btn btn-primary'
+    type='button'
+    {{on 'click' this.saveExam}}
+  >Save</button>
+</form>

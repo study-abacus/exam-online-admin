@@ -1,0 +1,43 @@
+{{page-title 'Examinations'}}
+<div class='input-group input-group-lg container my-5 gx-4'>
+  <Input class='form-control' placeholder='Search examinations' />
+  <a href='/examinations/new' class='mx-3 btn btn-outline-info'>Create New Exam</a>
+</div>
+
+<table class='container table'>
+  <thead>
+    <tr class='table-secondary'>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model as |exam|}}
+      <tr>
+        <td>{{exam.id}}</td>
+        <td>{{exam.code}}</td>
+        <td>{{exam.title}}</td>
+        <td>
+          <LinkTo @route='examinations.id' @model={{exam}}>
+            <button type='button' class='btn btn-primary mx-2'>Edit</button>
+          </LinkTo>
+          {{#if exam.unlisted}}
+            <button
+              type='button'
+              class='btn btn-danger'
+              onclick={{action 'toggleListedExam' exam}}
+            >Unlist</button>
+          {{else}}
+            <button
+              type='button'
+              class='btn btn-success'
+              onclick={{action 'toggleListedExam' exam}}
+            >List</button>
+          {{/if}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
