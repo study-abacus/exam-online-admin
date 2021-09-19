@@ -10,7 +10,6 @@ Router.map(function () {
   this.route('examinations', function () {
     this.route('id', { path: '/:id' });
     this.route('new');
-    this.route('list');
   });
   this.route('users');
   this.route('exam-attempts');

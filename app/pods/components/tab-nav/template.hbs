@@ -1,14 +1,18 @@
 <div
-  class='tab-nav-underline w-100 justify-content-start t-align-c {{tabClass}}'
+  class='nav nav-tabs {{tabClass}}'
 >
-  {{#each @tabs as |tab index|}}
-    <div
-      class='tab px-0 mr-md-5 mr-sm-4 mr-3 font-sm bold
-        {{if (eq tab activeTab) 'active' inactiveClass}}'
-      {{on 'click' (action @onTabChange tab)}}
-    >{{tab.name}}</div>
+  {{#each this.args.tabs as |tab index|}}
+    <li class="nav-item">
+      <a 
+        class="nav-link {{if (eq tab this.currentActive) 'active' ''}}" 
+        aria-current="page" href="#"
+        {{on 'click' (action this.onTabChange tab)}}
+      >
+        {{tab.name}}
+      </a>
+    </li>
   {{/each}}
 </div>
 <div>
-  {{yield}}
+  {{yield currentActive.component}}
 </div>

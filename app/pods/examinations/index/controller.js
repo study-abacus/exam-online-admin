@@ -1,12 +1,9 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
 
 export default class ExaminationsIndexController extends Controller {
-  queryParams = ['abc'];
-  abc = '';
-
-  @tracked examlist = [];
+  queryParams = ['q'];
+  q = '';
 
   @action
   toggleListedExam(exam) {

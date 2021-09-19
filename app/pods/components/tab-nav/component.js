@@ -8,17 +8,13 @@ export default class TabNavComponent extends Component {
 
   constructor() {
     super(...arguments);
-    // first tab is active, if no activeTab is provided
-    // if (!this.activeTab) {
     later(() => {
-      // this.onTabChange(this.tabs.firstObject);
-      this.currentActive = this.tabs.firstObject;
+      this.currentActive = this.args.tabs.firstObject;
     });
-    // }
   }
 
-  // @action
-  // onclick() {
-
-  // }
+  @action
+  onTabChange(tab) {
+    this.currentActive = tab;
+  }
 }

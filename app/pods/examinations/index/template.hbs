@@ -1,6 +1,10 @@
 {{page-title 'Examinations'}}
 <div class='input-group input-group-lg container my-5 gx-4'>
-  <Input class='form-control' placeholder='Search examinations' />
+  <Input 
+    class='form-control' 
+    placeholder='Search examinations' 
+    @value={{mut (get this "q")}}
+  />
   <a href='/examinations/new' class='mx-3 btn btn-outline-info'>Create New Exam</a>
 </div>
 
