@@ -5,7 +5,7 @@
     placeholder='Search examinations' 
     @value={{mut (get this "q")}}
   />
-  <a href='/examinations/new' class='mx-3 btn btn-outline-info'>Create New Exam</a>
+  <LinkTo @route="examinations.new" class='mx-3 btn btn-outline-info'>Create New Exam</LinkTo>
 </div>
 
 <table class='container table'>

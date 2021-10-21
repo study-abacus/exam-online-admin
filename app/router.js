@@ -14,4 +14,5 @@ Router.map(function () {
   this.route('users');
   this.route('exam-attempts');
   this.route('question');
+  this.route('login');
 });

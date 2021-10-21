@@ -6,13 +6,13 @@ export default class ExamEditorComponent extends Component {
   get tabs() {
     return [
       {
-        name: "Editor",
-        component: "exam-editor/main-editor"
+        name: 'Editor',
+        component: 'exam-editor/main-editor',
       },
       {
-        name: "test",
-        component: "exam-editor/main-editor"
-      }
-    ]
+        name: 'test',
+        component: 'exam-editor/main-editor',
+      },
+    ];
   }
 }

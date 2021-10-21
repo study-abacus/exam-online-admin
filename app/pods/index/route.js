@@ -3,4 +3,4 @@ import AuthenticatedRouteMixin from 'exam-online-admin/mixins/authenticated-rout
 
 const AuthenticatedRoute = Route.extend(AuthenticatedRouteMixin);
 
-export default class ExaminationsRoute extends AuthenticatedRoute {}
+export default class IndexRoute extends AuthenticatedRoute {}
