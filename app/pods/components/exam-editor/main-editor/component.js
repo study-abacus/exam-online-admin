@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class ExamEditorMainEditorComponent extends Component {
-  examTypes = ['vedic-maths', 'maths', 'abacus'];
+  examTypes = ['vedic-maths', 'english', 'abacus'];
 
   @action
   saveExam() {
