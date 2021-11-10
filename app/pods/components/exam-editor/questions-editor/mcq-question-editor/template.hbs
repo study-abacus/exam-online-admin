@@ -1,0 +1,36 @@
+{{#each this.args.question.choices as |choice i|}}
+  <div class="row mb-2">
+    <label
+      for='choice-editor-{{i}}'
+      class='col-sm-2 col-form-label'
+    >
+      Choice #{{inc i}}
+    </label>
+    <div class='col-sm-9'>
+      <Input
+        type='text'
+        class='form-control'
+        id='choice-editor-{{i}}'
+        @value={{choice.title}}
+      />
+    </div>
+    <div class="col-sm-1">
+      <button 
+        class="btn btn-danger"
+        type="button"
+        {{on "click" (fn removeChoice choice)}}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+{{/each}}
+<div class="mb-2">
+  <button 
+    class="btn btn-primary"
+    type="button"
+    {{on "click" addChoice}}
+  >
+    Add Choice
+  </button>
+</div>

@@ -1,0 +1,44 @@
+<form class='card card-body'>
+  <h3>Questions Editor</h3>
+  <div class="mt-3">
+    <div class="accordion" id="questionsAccordion">
+
+      {{#each this.args.exam.questions as |question i|}}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{question.id}}">
+            <button 
+              class="accordion-button" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapse{{question.id}}" 
+              aria-controls="collapse{{question.id}}"
+            >
+              Question #{{inc i}} {{question.title}} {{if question.isNew "(Unsaved)" ""}}
+            </button>
+          </h2>
+          <div 
+            id="collapse{{question.id}}" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="heading{{question.id}}" 
+            data-bs-parent="#questionsAccordion"
+          >
+            <div class="accordion-body">
+              <ExamEditor::QuestionsEditor::MainEditor 
+                @question={{question}}
+              />
+            </div>
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <Base::TaskButton 
+      @task={{this.addQuestion}}
+    >
+      Add Question
+    </Base::TaskButton>
+  </div>
+</form>

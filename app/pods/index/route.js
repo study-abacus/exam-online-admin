@@ -1,6 +1,10 @@
 import Route from '@ember/routing/route';
-import AuthenticatedRouteMixin from 'exam-online-admin/mixins/authenticated-route-mixin';
+import { inject as service } from '@ember/service';
 
-const AuthenticatedRoute = Route.extend(AuthenticatedRouteMixin);
+export default class IndexRoute extends Route {
+  @service session;
 
-export default class IndexRoute extends AuthenticatedRoute {}
+  beforeModel(transition) {
+    this.session.requireAuthentication(transition, 'login');
+  }
+}

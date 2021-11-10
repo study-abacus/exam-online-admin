@@ -1,0 +1,9 @@
+<button
+  class='btn btn-primary'
+  ...attributes
+  type='button'
+  disabled={{@task.isRunning}}
+  {{on 'click' @task.perform}}
+>
+  {{yield}}
+</button>

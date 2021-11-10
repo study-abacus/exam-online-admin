@@ -60,6 +60,7 @@
     "ember-simple-auth-token": "^5.2.2",
     "ember-source": "~3.27.2",
     "ember-template-lint": "^3.4.2",
+    "ember-toastr": "^3.0.0",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
@@ -73,7 +74,8 @@
     "prettier": "^2.3.0",
     "qunit": "^2.15.0",
     "qunit-dom": "^1.6.0",
-    "sass": "^1.38.0"
+    "sass": "^1.38.0",
+    "toastr": "^2.1.4"
   },
   "engines": {
     "node": "10.* || >= 12"

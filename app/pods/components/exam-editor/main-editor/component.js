@@ -1,12 +1,12 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
+import { dropTask } from 'ember-concurrency-decorators';
 
 export default class ExamEditorMainEditorComponent extends Component {
   examTypes = ['vedic-maths', 'english', 'abacus'];
 
-  @action
-  saveExam() {
-    this.args.exam.save();
+  @dropTask
+  *saveExam() {
+    yield this.args.exam.save();
     this.args?.oncreate?.();
   }
 }

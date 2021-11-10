@@ -10,8 +10,8 @@ export default class ExamEditorComponent extends Component {
         component: 'exam-editor/main-editor',
       },
       {
-        name: 'test',
-        component: 'exam-editor/main-editor',
+        name: 'Questions',
+        component: 'exam-editor/questions-editor',
       },
     ];
   }

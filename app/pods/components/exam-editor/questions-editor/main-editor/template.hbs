@@ -1,0 +1,54 @@
+<div class="d-flex flex-col p-4">
+  <div class='row mb-3'>
+    <label for='question-title' class='col-sm-2 col-form-label'>Title</label>
+    <div class='col-sm-10'>
+      <Input
+        type='text'
+        class='form-control'
+        id='question-title'
+        @value={{this.args.question.title}}
+      />
+    </div>
+  </div>
+  <div class='row mb-3'>
+    <label for='question-description' class='col-sm-2 col-form-label'>Description</label>
+    <div class='col-sm-10'>
+      <Textarea 
+        class='form-control'
+        id='question-description'
+        @value={{this.args.question.description}}
+      />
+    </div>
+  </div>
+  <div class='row mb-3'>
+    <label for='question-type' class='col-sm-2 col-form-label'>Question Type</label>
+    <div class='col-sm-10'>
+      <PowerSelect
+        @options={{this.questionTypes}}
+        @onChange={{action (mut this.args.question.type)}}
+        @selected={{this.args.question.type}}
+        as |name|
+      >
+        {{name}}
+      </PowerSelect>
+    </div>
+  </div>
+  <div class="row mb-3">
+    {{component extendedEditorComponent question=this.args.question}}
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <Base::TaskButton
+      @task={{this.saveQuestion}}
+      class="mr-3"
+    >
+      Save
+    </Base::TaskButton>
+    <Base::TaskButton
+      @task={{this.deleteQuestion}}
+      class="btn btn-danger"
+    >
+      Delete
+    </Base::TaskButton>
+  </div>
+</div>
