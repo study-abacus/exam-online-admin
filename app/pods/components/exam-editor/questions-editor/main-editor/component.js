@@ -18,8 +18,8 @@ export default class ExamEditorQuestionsEditorMainEditorComponent extends Compon
   *saveQuestion() {
     yield this.args.question.save();
 
-    if (this.args.question.type == "mcq") {
-      yield all(this.args.question.choices.map(choice => choice.save()))
+    if (this.args.question.type == 'mcq') {
+      yield all(this.args.question.choices.map((choice) => choice.save()));
     }
   }
 

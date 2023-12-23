@@ -9,12 +9,12 @@ export default class ExamEditorQuestionsEditorMcqQuestionEditorComponent extends
   addChoice() {
     this.store.createRecord('choice', {
       question: this.args.question,
-      title: ''
-    })
+      title: '',
+    });
   }
 
   @action
   removeChoice(choice) {
-    choice.destroyRecord()
+    choice.destroyRecord();
   }
 }

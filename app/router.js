@@ -11,7 +11,10 @@ Router.map(function () {
     this.route('id', { path: '/:id' });
     this.route('new');
   });
-  this.route('users');
+  this.route('users', function () {
+    this.route('new');
+    this.route('id', { path: '/:id' });
+  });
   this.route('exam-attempts');
   this.route('question');
   this.route('login');

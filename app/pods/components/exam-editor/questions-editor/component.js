@@ -11,7 +11,7 @@ export default class ExamEditorQuestionsEditorComponent extends Component {
       examination: this.args.exam,
       title: '',
       description: '',
-      type: 'text'
-    })
+      type: 'text',
+    });
   }
 }
